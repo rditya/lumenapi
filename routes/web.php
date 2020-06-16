@@ -56,3 +56,11 @@ $router->get('post/{postId}/comments/{commentId}', function ($postId, $commentId
 $router->get('optional[/{param}]', function ($param = null) {
     return 'Opsi = '. $param;
 });
+
+$router->get('profile', function () {
+    return redirect()->route('route.profile');
+});
+
+$router->get('profile/rama', ['as' => 'route.profile', function () {
+    return 'Rama Aditya';
+}]);
